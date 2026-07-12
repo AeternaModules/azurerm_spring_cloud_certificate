@@ -1,3 +1,7 @@
+output "spring_cloud_certificates_id" {
+  description = "Map of id values across all spring_cloud_certificates, keyed the same as var.spring_cloud_certificates"
+  value       = { for k, v in azurerm_spring_cloud_certificate.spring_cloud_certificates : k => v.id }
+}
 output "spring_cloud_certificates_certificate_content" {
   description = "Map of certificate_content values across all spring_cloud_certificates, keyed the same as var.spring_cloud_certificates"
   value       = { for k, v in azurerm_spring_cloud_certificate.spring_cloud_certificates : k => v.certificate_content }
